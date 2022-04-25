@@ -1,0 +1,22 @@
+{
+    "exclude": ["node_modules", "dist"],
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "ES2015",
+        "noImplicitAny": true,
+        "declaration": true,
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
+        "sourceMap": true,
+        "outDir": "dist",
+        "watch": false,
+        "lib": ["es2018"],
+        "moduleResolution": "node",
+        "noUnusedLocals": true,
+        "strict": true,
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["src/*"]
+        }
+    }
+}
