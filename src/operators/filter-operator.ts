@@ -1,8 +1,12 @@
-import { interval, fromEvent, takeUntil, switchMap, tap } from 'rxjs';
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+import { interval, fromEvent, takeUntil } from 'rxjs';
 
-const clickMe = document.getElementById('clickme');
-const stopMe = document.getElementById('stopme');
-const clickMeObs$ = fromEvent(clickMe, 'click');
+// const clickMe = document.getElementById('clickme')!;
+
+const stopMe = document.getElementById('stopme')!;
+
+// const clickMeObs$ = fromEvent(clickMe, 'click');
+
 const stopMeObs$ = fromEvent(stopMe, 'click');
 
 // const result = clickMeObs$.pipe(

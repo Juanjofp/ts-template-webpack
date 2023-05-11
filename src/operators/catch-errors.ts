@@ -1,4 +1,4 @@
-import { interval, map, catchError, tap, take, of } from 'rxjs';
+import { interval, map, catchError, tap, take } from 'rxjs';
 
 console.log('CatchError operator');
 
@@ -45,7 +45,7 @@ const result$ = random$.pipe(
   take(6)
 );
 
-const subscription = result$.subscribe({
+result$.subscribe({
   next: val => console.log('Emit', val),
   complete: () => console.log('Complete')
 });

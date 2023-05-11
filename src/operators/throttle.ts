@@ -12,7 +12,7 @@ const clicks$ = fromEvent<MouseEvent>(window, 'click');
 
 const result$ = clicks$.pipe(throttleTime(2000));
 
-const subscription = result$.subscribe({
+result$.subscribe({
   next: val => console.log('Emit', val.clientX),
   complete: () => console.log('Complete')
 });

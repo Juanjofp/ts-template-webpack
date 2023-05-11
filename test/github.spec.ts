@@ -1,10 +1,8 @@
 import { getOctokit } from '@actions/github';
 
-describe('github', () => {
+describe.skip('github', () => {
   it('should be tested', async () => {
-    const octokit = getOctokit(
-      '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'
-    );
+    const octokit = getOctokit('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');
 
     const { data: pullRequest } = await octokit.rest.pulls.listReviews({
       owner: 'facebook',

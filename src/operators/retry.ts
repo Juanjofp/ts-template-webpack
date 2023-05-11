@@ -10,11 +10,11 @@ const random$ = interval$.pipe(
   map(() => Math.random() * 10)
 );
 
-const throwUpper5 = map((value: number) => {
-  if (value < 5) return value;
+// const throwUpper5 = map((value: number) => {
+//   if (value < 5) return value;
 
-  throw new Error(`Upper value: ${value}`);
-});
+//   throw new Error(`Upper value: ${value}`);
+// });
 
 // const result$ = random$.pipe(
 //   throwUpper5,
@@ -58,7 +58,7 @@ const result$ = random$.pipe(
 
       return of(1000).pipe(
         delay(1000 * count),
-        tap(index => console.log('Retry number', count))
+        tap(() => console.log('Retry number', count))
       );
     }
   }),
@@ -66,7 +66,7 @@ const result$ = random$.pipe(
   take(3)
 );
 
-const subscription = result$.subscribe({
+result$.subscribe({
   next: val => console.log('Emit', val),
   error: error => console.log('##### Final Error ', error.message),
   complete: () => console.log('##### Complete')

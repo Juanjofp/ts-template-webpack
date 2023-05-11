@@ -1,4 +1,4 @@
-import { interval, take, map, bufferCount, buffer, bufferTime } from 'rxjs';
+import { interval, take, map, bufferTime } from 'rxjs';
 
 console.log('Buffer operator');
 
@@ -15,7 +15,7 @@ const values$ = interval(1000).pipe(
 
 const result$ = values$.pipe(bufferTime(2000));
 
-const subscription = result$.subscribe({
+result$.subscribe({
   next: val => console.log('Emit', val),
   complete: () => console.log('Complete')
 });

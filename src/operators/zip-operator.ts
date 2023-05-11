@@ -1,4 +1,4 @@
-import { from, zip, interval, tap, map } from 'rxjs';
+import { from, zip, interval } from 'rxjs';
 
 console.log('Zip operator');
 
@@ -14,7 +14,7 @@ const asyncObs$ = interval(1000);
 
 const result$ = zip([syncObs$, asyncObs$], (...values) => values[0]);
 
-const subscription = result$.subscribe({
+result$.subscribe({
   next: val => console.log('Emit', val),
   complete: () => console.log('Complete')
 });

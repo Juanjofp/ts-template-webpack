@@ -10,7 +10,7 @@ const result$ = values$.pipe(
   }, 0)
 );
 
-const subscription = result$.subscribe({
+result$.subscribe({
   next: val => console.log('Emit', val),
   complete: () => console.log('Complete')
 });

@@ -36,6 +36,6 @@ const ob$ = new Observable(observer => {
   return () => clearInterval(intervalId);
 });
 
-const subs = ob$.pipe(take(5)).subscribe({
+ob$.pipe(take(5)).subscribe({
   next: console.log
 });

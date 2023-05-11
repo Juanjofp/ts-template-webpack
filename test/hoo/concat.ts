@@ -6,8 +6,8 @@ const clicks$ = fromEvent(window, 'click');
 
 const result$ = clicks$;
 
-const subs = result$.subscribe({
-  next: (value) => console.log('Value', value),
-  error: (error) => console.log('Error', error),
-  complete: () => console.log('Complete'),
+result$.subscribe({
+  next: value => console.log('Value', value),
+  error: error => console.log('Error', error),
+  complete: () => console.log('Complete')
 });

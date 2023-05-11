@@ -1,4 +1,4 @@
-import { debounceTime, debounce, interval, fromEvent, first, tap } from 'rxjs';
+import { debounce, interval, fromEvent, first, tap } from 'rxjs';
 
 console.log('Debounce operator');
 
@@ -25,7 +25,7 @@ const result$ = clicks$.pipe(
   })
 );
 
-const subscription = result$.subscribe({
+result$.subscribe({
   next: val => console.log('Emit', val),
   complete: () => console.log('Complete')
 });

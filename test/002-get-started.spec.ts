@@ -15,8 +15,6 @@ describe('Get started with HOO', () => {
       next: value => result.push(value),
 
       complete: () => {
-        console.log('complete!');
-
         expect(result).toEqual([1, 2, 3]);
         done();
       }

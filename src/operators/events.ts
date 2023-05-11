@@ -2,7 +2,8 @@ import { fromEvent, fromEventPattern } from 'rxjs';
 
 console.log('From events operators');
 
-const clickMe = document.getElementById('clickme');
+// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+const clickMe = document.getElementById('clickme')!;
 
 function addEventHandler(handler: () => void) {
   document.addEventListener('click', handler);
@@ -14,7 +15,7 @@ function removeEventHandler(handler: () => void) {
 
 const obs$ = fromEventPattern(addEventHandler, removeEventHandler);
 
-const subs = obs$.subscribe({
+obs$.subscribe({
   next: evt => console.log('Event document click', evt),
   complete: () => console.log('FromEventPattern complete!') // Never run
 });
@@ -23,7 +24,7 @@ const subs = obs$.subscribe({
 
 const obsButton$ = fromEvent(clickMe, 'click', { capture: true });
 
-const subs2 = obsButton$.subscribe({
+obsButton$.subscribe({
   next: evt => console.log('Event button click', evt),
   complete: () => console.log('FromEvent complete!') // Never run
 });
