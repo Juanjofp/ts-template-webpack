@@ -5,6 +5,8 @@ describe('switch operators', () => {
   // switch operators are used to switch to a new observable
   // switchMap is the most used operator of this family
 
+  // ~~~~~~ SwitchAll
+
   it('should switch to a new observable', done => {
     const expectedResult = [0, 1, 2, 0, 1, 2, 0, 1, 2, 3, 4];
 
@@ -33,6 +35,8 @@ describe('switch operators', () => {
     });
   });
 
+  // ~~~~~~ SwitchMap
+
   it('should switchMap to a new observable', done => {
     const expectedResult = [0, 1, 2, 0, 1, 2, 0, 1, 2, 3, 4];
 
@@ -56,6 +60,8 @@ describe('switch operators', () => {
       }
     });
   });
+
+  // ~~~~~~ SwitchScan
 
   it('should accumulate values from observable', done => {
     const expectedResult = [0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4];

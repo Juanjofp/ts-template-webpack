@@ -16,7 +16,7 @@
     "lint": "eslint . --ext .ts --fix",
     "format": "prettier --write \"src/**/*.+(js|jsx|ts|tsx|json)\"",
     "formatTest": "prettier --write \"test/**/*.+(js|jsx|ts|tsx|json)\"",
-    "test": "jest --watchAll",
+    "test": "jest --watchAll --coverage=false",
     "test:coverage": "jest --watchAll --coverage",
     "test:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --watch",
     "test:ci": "jest --collect-coverage",
