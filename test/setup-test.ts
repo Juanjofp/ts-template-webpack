@@ -1,5 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-global.XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
+const XMLHttpRequest = require('xhr2');
+
+global.XMLHttpRequest = XMLHttpRequest;
 
 const port = 8080 + Number(process.env.JEST_WORKER_ID);
 

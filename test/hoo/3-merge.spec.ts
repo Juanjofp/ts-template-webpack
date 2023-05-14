@@ -122,9 +122,7 @@ describe('merge operators', () => {
       error: error => console.log('Error', error),
 
       complete: () => {
-        // expect(result).toEqual(expectedResult);
-
-        console.log('Complete', expectedResult, result);
+        expect(result).toEqual(expectedResult);
 
         done();
       }
