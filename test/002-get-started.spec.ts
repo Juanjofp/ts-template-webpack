@@ -6,8 +6,11 @@ describe('Get started with HOO', () => {
 
     const observable$ = new Observable<number>(subscriber => {
       subscriber.next(1);
+
       subscriber.next(2);
+
       subscriber.next(3);
+
       subscriber.complete();
     });
 
@@ -16,6 +19,7 @@ describe('Get started with HOO', () => {
 
       complete: () => {
         expect(result).toEqual([1, 2, 3]);
+
         done();
       }
     });

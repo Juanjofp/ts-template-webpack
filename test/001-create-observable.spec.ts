@@ -6,8 +6,11 @@ describe('Create observable', () => {
 
     const observable$ = new Observable<number>(subscriber => {
       subscriber.next(1);
+
       subscriber.next(2);
+
       subscriber.next(3);
+
       subscriber.complete();
     });
 
@@ -16,10 +19,9 @@ describe('Create observable', () => {
 
       complete: () => {
         expect(result).toEqual([1, 2, 3]);
+
         done();
       }
     });
   });
 });
-
-export {};
