@@ -19,3 +19,17 @@
 4. When a subject complete or errors out, it will also complete or error out the subscribers.
 
 5. If a observer subscribes to a completed subject, the observer will receive the complete notification immediately.
+
+## BehaviorSubject
+
+1. A BehaviorSubject is a type of subject that requires an initial value and emits its current value (last emitted item) to new subscribers.
+2. BehaviorSubjects are useful for representing "values over time". For instance, an event stream of birthdays is a Subject, but the stream of a person's age would be a BehaviorSubject.
+3. When a observer subscribe to a BehaviorSubject, it will immediately receive the last emitted value by the subject. A regular observable only emits items that are emitted after a subscription.
+4. When a observer subscribe to a completed BehaviorSubject, the observer will be completed immediatily without receive the last value.
+
+## ReplaySubject
+
+1. A ReplaySubject is a type of subject that will replay all of its items to a subscriber, regardless of when the subscriber subscribes.
+2. A ReplaySubject require a buffer size as parameter. This buffer size will determine how many items will be replayed to the subscriber.
+3. A ReplaySubject accept a second parameter, the window time. This parameter will determine how long the items will be stored in the buffer.
+4. When a observer subscribe to a completed ReplaySubject, the observer will receive the last emitted values (depending on bufferSize and windowSize) immediatily and will be completed.

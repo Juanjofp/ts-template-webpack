@@ -70,7 +70,7 @@ describe('A Bridge observer', () => {
       }
     });
 
-    // Subcribe subscriber 2 after 2 seconds
+    // Subcribe subscriber2 after 2 seconds
 
     setTimeout(() => {
       bridge.subscribe({
