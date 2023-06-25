@@ -33,3 +33,36 @@
 2. A ReplaySubject require a buffer size as parameter. This buffer size will determine how many items will be replayed to the subscriber.
 3. A ReplaySubject accept a second parameter, the window time. This parameter will determine how long the items will be stored in the buffer.
 4. When a observer subscribe to a completed ReplaySubject, the observer will receive the last emitted values (depending on bufferSize and windowSize) immediatily and will be completed.
+
+## ConnectableObservable. Multicast
+
+1. A ConnectableObservable is a type of observable that will not emit items until its connect() method is called.
+2. Multicast is a type of observable that will not emit items until its connect() method is called.
+3. It is deprecated in favour of using `connectable` operator.
+4. Deprecated `refCount` operator to automatically connect when has 1 suscriber and disconnect when the number of subscribers is 0.
+5. Use `share` operator instead of `multicast + refCount`.
+6. Publish operator is the same as multicast(new Subject()).
+7. Publish and Multicast are deprecated, use share, connectable and connect instead.
+
+```javascript
+// publish = multicast + Subject
+// publishReplay = multicast + ReplaySubject
+// publishBehavior = multicast + BehaviorSubject
+// publishLast = multicast + AsyncSubject
+
+// share = publish().refCount()
+// publish = multicast + Subject
+// publishReplay = multicast + ReplaySubject
+// publishBehavior = multicast + BehaviorSubject
+// publishLast = multicast + AsyncSubject
+```
+
+## Share
+
+1. Share is a type of observable that will automatically connect when has 1 suscriber and disconnect when the number of subscribers is 0.
+2. Share is the same as publish().refCount().
+3. Share is the same as multicast(new Subject()).refCount().
+4. Share can reset subscribers when the source observable completes or errors out. resetOnComplete and resetOnError parameters.
+5. Share can reser subscriber when subscription count is 0. resetOnRefCountZero parameter.
+
+## Selectors
