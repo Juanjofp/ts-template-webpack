@@ -1,6 +1,8 @@
 import { interval, tap, Subscription, share } from 'rxjs';
 
 describe('Using refCount', () => {
+  jest.setTimeout(10000);
+
   it('Should create a automatically connectable observable and unsubscribe when no observer', done => {
     // Observers
 
@@ -65,7 +67,7 @@ describe('Using refCount', () => {
       console.log('End test');
 
       done();
-    }, 4000);
+    }, 8000);
     /*
 
       Output:

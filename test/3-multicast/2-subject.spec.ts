@@ -13,24 +13,27 @@ describe('A Subject', () => {
     const subject = new Subject<number>();
 
     // Subscribe bridge to observable
+    // obs$ start emitting values
 
     obs$.subscribe(subject);
 
     // Subscribe subscriber1 to bridge
 
-    subject.subscribe({
-      next: value => {
-        console.log('Subscriber1', value);
-      },
+    setTimeout(() => {
+      subject.subscribe({
+        next: value => {
+          console.log('Subscriber1', value);
+        },
 
-      error: error => {
-        console.log('Subscriber1 error', error);
-      },
+        error: error => {
+          console.log('Subscriber1 error', error);
+        },
 
-      complete: () => {
-        console.log('Subscriber1 complete');
-      }
-    });
+        complete: () => {
+          console.log('Subscriber1 complete');
+        }
+      });
+    }, 1100);
 
     // Subcribe subscriber 2 after 2 seconds
 
