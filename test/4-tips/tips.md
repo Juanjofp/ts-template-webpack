@@ -29,3 +29,13 @@
 14. Be carefull when extend a observable. You can break the chain of operators.
 
 15. Make observable hot only when needed. Use `share()` to share the same observable between multiple subscribers. Use `shareReplay()` to share the same observable between multiple subscribers and replay the last emitted value.
+
+16. Use takeUntil() to unsubscribe from an observable automatically. Combine it with `interval()` to implement a timer or with subject to implement a custom timer.
+
+17. Use `take()` to limit the number of emitted values.
+
+18. Use `debounceTime()` to limit the number of emitted values.
+
+19. Use `distinctUntilChanged()` to avoid emitting the same value multiple times.
+
+20. Combine switchMap with a subject to implement pause and resume behavior. The subject emmit a value when the user click on a button. The switchMap will cancel the previous observable and will start a new one when the subject emits a value.
